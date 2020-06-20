@@ -1,0 +1,28 @@
+<div class="container">
+
+	        	 <div class="input-field col s6">
+	          		<input #number type="number" class="validate">
+	          		<label class="active" for="last_name">Enter Number Of questions</label>
+	        		<button (click) = "numberOfQuest(number)">OK</button>
+	        	</div>
+
+		<form (ngSubmit) = "submit(form)" #form = "ngForm">
+			
+		<div *ngFor = "let i of questions; let in = index;">
+			<h4>Question {{in+1}}</h4>
+			<input placeholder="Question name" type="" [(ngModel)] = "i.name" name="i">
+			<input placeholder="Question Statement" type="" [(ngModel)] = "i.description" name="i">
+			<input placeholder="marks" type="number" [(ngModel)] = "i.marks" name="i">
+			<input placeholder="Option 1" type="" [(ngModel)] = "i.option1" name="i">
+			<input placeholder="Option 2" type="" [(ngModel)] = "i.option2" name="i">
+			<input placeholder="Option 3" type="" [(ngModel)] = "i.option3" name="i">
+			<input placeholder="Option 4" type="" [(ngModel)] = "i.option4" name="i">
+			<input placeholder="Correct Option" type="number" [(ngModel)] = "i.ans" name="i">
+			<br>
+		</div>
+		
+
+
+			<button type="submit"> submit</button>
+		</form>
+</div>
